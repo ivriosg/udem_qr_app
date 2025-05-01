@@ -1,0 +1,14 @@
+# node_modules y dependencias
+node_modules/
+.env
+
+# Build y salida de producción
+dist/
+build/
+
+# Archivos temporales de sistema
+.DS_Store
+*.log
+
+# Archivos de configuración locales
+firebase-debug.log
