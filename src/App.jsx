@@ -73,8 +73,7 @@ function App() {
       ) : !access ? (
         <div className="mt-4 text-center">
           <p>
-            Hola <strong>{userName}</strong>, <br />
-            selecciona el acceso en el que te encuentras:
+            Hola <strong>{userName}</strong>
           </p>
           <AccessSelector onSelect={handleAccessSelect} />
         </div>

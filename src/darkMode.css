@@ -107,3 +107,28 @@ body {
 .fw-semibold {
   font-weight: 600;
 }
+
+/* Estilos para toastr en dark-mode */
+#toast-container > div.toast-success {
+  background-color: #00c851;
+  opacity: 1;
+  color: var(--bs-black);
+}
+
+#toast-container > div.toast-error {
+  background-color: #ff4444;
+  opacity: 1;
+  color: var(--bs-white);
+}
+
+#toast-container > div.toast-warning {
+  background-color: #ffbb33;
+  opacity: 1;
+  color: var(--bs-black);
+}
+
+#toast-container > div.toast-info {
+  background-color: #33b5e5;
+  opacity: 1;
+  color: var(--bs-black);
+}

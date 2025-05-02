@@ -28,6 +28,10 @@ export default function Navbar({ onReset }) {
     navigate("/admin");
   };
 
+  const handleGoToHome = () => {
+    navigate("/");
+  };
+
   const handleResetUser = () => {
     sessionStorage.removeItem("usuario");
     sessionStorage.removeItem("acceso");
@@ -65,12 +69,20 @@ export default function Navbar({ onReset }) {
         )}
 
         {isOnAdmin && admin && (
-          <button
-            className="btn btn-outline-light fw-semibold"
-            onClick={handleLogoutAdmin}
-          >
-            Cerrar sesión
-          </button>
+          <div className="d-flex gap-2">
+            <button
+              className="btn btn-custom-yellow fw-semibold"
+              onClick={handleGoToHome}
+            >
+              Ver sistema
+            </button>
+            <button
+              className="btn btn-outline-light fw-semibold"
+              onClick={handleLogoutAdmin}
+            >
+              Cerrar sesión
+            </button>
+          </div>
         )}
       </div>
     </nav>

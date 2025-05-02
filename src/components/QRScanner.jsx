@@ -13,7 +13,7 @@ import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
 toastr.options = {
-  positionClass: "toast-bottom-full-width",
+  positionClass: "toast-top-center",
   timeOut: 3000,
   closeButton: true,
 };
@@ -23,6 +23,7 @@ const QRScanner = ({ access }) => {
   const lastScanRef = useRef(0);
   const lastDuplicateRef = useRef({});
   const scannerRef = useRef(null);
+  const usuario = sessionStorage.getItem("usuario") || "Sin nombre";
 
   const calculateQrBox = () => {
     const width = window.innerWidth;
@@ -111,6 +112,7 @@ const QRScanner = ({ access }) => {
                 tipo,
                 timestamp: serverTimestamp(),
                 acceso: access,
+                registradoPor: usuario,
                 fuente: "QR",
               };
 
@@ -230,6 +232,18 @@ const QRScanner = ({ access }) => {
           transition: "opacity 0.3s ease-in-out",
         }}
       />
+
+      {/* Botón flotante para cambiar acceso */}
+      <button
+        className="btn btn-custom-yellow position-fixed"
+        style={{ bottom: "1rem", right: "1rem", zIndex: 10 }}
+        onClick={() => {
+          sessionStorage.removeItem("acceso");
+          window.location.reload();
+        }}
+      >
+        Cambiar acceso
+      </button>
     </div>
   );
 };
